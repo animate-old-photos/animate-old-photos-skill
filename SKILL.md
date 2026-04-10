@@ -19,9 +19,9 @@ Animate old photos into AI-generated videos via the [Animate Old Photos](https:/
 >
 > - Official Website: [Animate Old Photos](https://animateoldphotos.org/)
 > - Get your API key: [Profile > API Key](https://animateoldphotos.org/profile/interface-key)
-> - Purchase credits: [Buy Credits](https://animateoldphotos.org/stripe)
+> - Purchase credits: [Buy Credits](https://animateoldphotos.org/pricing)
 >
-> Each animation costs **3 credits**. [View pricing plans](https://animateoldphotos.org/stripe)
+> Each animation costs **3 credits**. [View pricing plans](https://animateoldphotos.org/pricing)
 
 **System requirements:** `curl` and `jq` must be available in the shell.
 
@@ -50,7 +50,7 @@ echo "Authenticated. Credits available: $CREDITS"
 
 If `accessToken` is missing or `error_code` is `4010`/`4011`, tell the user their API key is invalid and link to <https://animateoldphotos.org/profile/interface-key>.
 
-If credits < 3, tell the user to purchase more at <https://animateoldphotos.org/stripe> and stop.
+If credits < 3, tell the user to purchase more at <https://animateoldphotos.org/pricing> and stop.
 
 ### Step 2 — Upload image
 
@@ -111,7 +111,7 @@ TASK_DID=$(echo "$TASK" | jq -r '.did')
 echo "Task submitted (ID: $TASK_ID). Polling for result..."
 ```
 
-If the response contains `error_code` `999990` or `10009`, the user has insufficient credits — link to <https://animateoldphotos.org/stripe>.
+If the response contains `error_code` `999990` or `10009`, the user has insufficient credits — link to <https://animateoldphotos.org/pricing>.
 
 ### Step 5 — Poll until done
 
@@ -164,8 +164,8 @@ See [scripts/animate.sh](scripts/animate.sh) for details.
 | `4010` | Invalid API key | Direct user to [get a key](https://animateoldphotos.org/profile/interface-key) |
 | `4011` | API key expired | Direct user to [renew key](https://animateoldphotos.org/profile/interface-key) |
 | `999998` | Access token invalid | Re-run Step 1 to get a new token |
-| `999990` | Insufficient credits | Direct user to [buy credits](https://animateoldphotos.org/stripe) |
-| `10009` | Insufficient credits | Direct user to [buy credits](https://animateoldphotos.org/stripe) |
+| `999990` | Insufficient credits | Direct user to [buy credits](https://animateoldphotos.org/pricing) |
+| `10009` | Insufficient credits | Direct user to [buy credits](https://animateoldphotos.org/pricing) |
 
 For network errors, retry up to 3 times with exponential backoff (2s, 4s, 8s).
 
