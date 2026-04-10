@@ -32,7 +32,7 @@ This is a paid service.
 
 - Official website: [animateoldphotos.org](https://animateoldphotos.org/)
 - Get an API key: [Profile > API Key](https://animateoldphotos.org/profile/interface-key)
-- Buy credits: [Pricing](https://animateoldphotos.org/pricing)
+- Buy credits: [Pricing](https://animateoldphotos.org/stripe)
 
 System requirements:
 
@@ -160,7 +160,7 @@ Create a new key at [Profile > API Key](https://animateoldphotos.org/profile/int
 
 **Insufficient credits**
 
-Buy more credits at [animateoldphotos.org/pricing](https://animateoldphotos.org/pricing).
+Buy more credits at [animateoldphotos.org/stripe](https://animateoldphotos.org/stripe).
 
 **`jq` not installed**
 
